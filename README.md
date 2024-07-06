@@ -70,7 +70,7 @@ direct you to the [PyTorch Installation Page](https://pytorch.org/get-started/lo
 You can then install the remaining package dependencies as follows:
 
 ```shell
-git clone https://github.com/huggingface/alignment-handbook.git
+git clone https://github.com/Aravindshanmugam/alignment-handbook.git
 cd ./alignment-handbook/
 python -m pip install .
 ```
