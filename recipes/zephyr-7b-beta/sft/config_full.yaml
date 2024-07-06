@@ -8,7 +8,7 @@ use_flash_attention_2: False
 
 chat_template:  "{% for message in messages %}\n{ '\nHuman: ' + message['goal'] +  eos_token }\n{ '\n\nAssistant: '  + message['code'] +  eos_token  }\n{% endfor %}\n{% if add_generation_prompt %}\n{{ '\n\nAssistant: ' }}\n{% endif %}"
 dataset_mixer:
-  rvind2508/Appian_postprocessed-1.2: 1.0
+  rvind2508/Appian_PostProcessed1.2_Split: 1.0
 dataset_splits:
 - train_sft
 - test_sft
