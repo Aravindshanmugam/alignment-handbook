@@ -29,7 +29,7 @@ log_level: info
 logging_steps: 3 
 logging_strategy: steps
 lr_scheduler_type: cosine
-max_seq_length: 24000
+max_seq_length: 16000
 max_steps: -1
 num_train_epochs: 3
 output_dir: data/full-fintuned-mistral-7b
