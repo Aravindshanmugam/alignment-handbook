@@ -6,7 +6,7 @@ use_flash_attention_2: False
 
 # Data training arguments
 
-chat_template:  "{% for message in messages %}\n{ '\nHuman: ' + message['goal'] +  eos_token }\n{ '\n\nAssistant: '  + message['code'] +  eos_token  }\n{% endfor %}\n{% if add_generation_prompt %}\n{{ '\n\nAssistant: ' }}\n{% endif %}"
+chat_template:  "{% for message in messages %}\n{% if message['role'] == 'user' %}\n{{ '<|user|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'system' %}\n{{ '<|system|>\n' + message['content'] + eos_token }}\n{% elif message['role'] == 'assistant' %}\n{{ '<|assistant|>\n'  + message['content'] + eos_token }}\n{% endif %}\n{% if loop.last and add_generation_prompt %}\n{{ '<|assistant|>' }}\n{% endif %}\n{% endfor %}"
 dataset_mixer:
   rvind2508/Appian_PostProcessed1.2_Split: 1.0
 dataset_splits:
